@@ -8,12 +8,36 @@ const skills = [
 ];
 
 const certifications = [
-  "Generative AI - Databricks (Apr 2025)",
-  "Kafka Developer Skills - Confluent (Jul 2021)",
-  "Azure Fundamentals - Microsoft (Jul 2021)",
-  "Scrum Master - LinkedIn (Mar 2021)",
-  "SMART Goals - LinkedIn (Mar 2021)",
-  "IBM DB2 Certified"
+  {
+    name: "Generative AI",
+    issuer: "Databricks",
+    date: "Apr 2025",
+    image: "/certifications/databricks.png"
+  },
+  {
+    name: "Kafka Developer Skills",
+    issuer: "Confluent",
+    date: "Jul 2021",
+    image: "/certifications/confluent.png"
+  },
+  {
+    name: "Azure Fundamentals",
+    issuer: "Microsoft",
+    date: "Jul 2021",
+    image: "/certifications/microsoft.png"
+  },
+  {
+    name: "Scrum Master",
+    issuer: "LinkedIn",
+    date: "Mar 2021",
+    image: "/certifications/linkedin.png"
+  },
+  {
+    name: "IBM DB2 Certified",
+    issuer: "IBM",
+    date: "N/A",
+    image: "/certifications/ibm.png"
+  }
 ];
 
 const projects = [
@@ -269,7 +293,7 @@ export default function App() {
           Projects
         </motion.h2>
         <motion.div
-          className="grid md:grid-cols-3 gap-4"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -278,7 +302,7 @@ export default function App() {
           {projects.map((proj) => (
             <motion.div
               key={proj.title}
-              className="border p-4 rounded shadow-sm"
+              className="bg-white p-6 rounded-lg shadow-md min-h-[200px] flex flex-col justify-between"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
@@ -303,25 +327,25 @@ export default function App() {
         <h2 className="text-3xl font-bold mb-6 text-center">Certifications</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {certifications.map(cert => (
-            <div
-              key={cert}
-              className="bg-white p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            <motion.div
+              key={cert.name}
+              className="bg-white p-6 border rounded-lg shadow-md transition-shadow"
+              whileHover={{ scale: 1.05 }} // Add hover animation
+              transition={{ duration: 0.3 }} // Smooth transition
             >
               <div className="flex items-center mb-4">
                 <img
-                  src={`https://via.placeholder.com/50?text=${cert.split(" ")[0][0]}`} // Replace with actual logos
-                  alt="Certification Icon"
-                  className="w-12 h-12 rounded-full mr-4"
+                  src={cert.image}
+                  alt={`${cert.name} Logo`}
+                  className="w-16 h-16 mr-4" // Square image
                 />
                 <div>
-                  <h3 className="font-semibold text-lg">{cert.split(" - ")[0]}</h3>
-                  <p className="text-sm text-gray-600">{cert.split(" - ")[1]}</p>
+                  <h3 className="font-semibold text-lg">{cert.name}</h3>
+                  <p className="text-sm text-gray-600">{cert.issuer}</p>
                 </div>
               </div>
-              <p className="text-sm text-gray-500">
-                Issued: {cert.match(/\((.*?)\)/)?.[1] || "N/A"}
-              </p>
-            </div>
+              <p className="text-sm text-gray-500">Issued: {cert.date}</p>
+            </motion.div>
           ))}
         </div>
       </section>
