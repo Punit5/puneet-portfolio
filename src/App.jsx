@@ -77,7 +77,7 @@ export default function App() {
       <header className="p-8 text-center bg-gray-100 max-w-full">
         <div className="flex flex-col items-center md:flex-row md:justify-center md:space-x-6">
           <img
-            src="/profile.jpg" // Replace with the actual path to your image
+            src="/profile.jpg"
             alt="Puneet Dimri"
             className="w-32 h-32 rounded-full shadow-md mb-4 md:mb-0"
           />
@@ -104,8 +104,19 @@ export default function App() {
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
             >
-              <a href="/resume.pdf" className="px-4 py-2 bg-black text-white rounded">Download Resume</a>
-              <a href="https://www.linkedin.com/in/punitdimrii" className="px-4 py-2 border rounded">LinkedIn</a>
+              <a 
+                href="/Resume.pdf" 
+                className="px-4 py-2 bg-black text-white rounded" 
+                download
+              >
+                Download Resume
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/punitdimrii" 
+                className="px-4 py-2 border rounded"
+              >
+                LinkedIn
+              </a>
             </motion.div>
           </div>
         </div>
@@ -153,7 +164,13 @@ export default function App() {
         <div className="max-w-5xl mx-auto">
           <p className="text-center text-lg">
             For detailed experience, check out my 
-            <a href="/resume.pdf" className="text-blue-600 underline ml-1" target="_blank" rel="noopener noreferrer">
+            <a 
+              href="/Resume.pdf" 
+              className="text-blue-600 underline ml-1" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              download
+            >
               Resume
             </a>.
           </p>
