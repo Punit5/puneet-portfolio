@@ -61,9 +61,9 @@ const projects = [
 export default function App() {
   return (
     <div className="font-sans text-gray-900 bg-white overflow-x-hidden">
-      <nav className="flex justify-between items-center p-4 shadow max-w-full">
+      <nav className="flex flex-wrap justify-between items-center p-4 shadow max-w-full">
         <div className="text-xl font-bold">Puneet Dimri</div>
-        <div className="space-x-4">
+        <div className="flex flex-wrap space-x-4">
           <a href="#about" className="hover:underline">About</a>
           <a href="#experience" className="hover:underline">Experience</a>
           <a href="#skills" className="hover:underline">Skills</a>
