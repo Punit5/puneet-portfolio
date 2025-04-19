@@ -60,8 +60,8 @@ const projects = [
 
 export default function App() {
   return (
-    <div className="font-sans text-gray-900 bg-white">
-      <nav className="flex justify-between items-center p-4 shadow">
+    <div className="font-sans text-gray-900 bg-white overflow-x-hidden">
+      <nav className="flex justify-between items-center p-4 shadow max-w-full">
         <div className="text-xl font-bold">Puneet Dimri</div>
         <div className="space-x-4">
           <a href="#about" className="hover:underline">About</a>
@@ -69,12 +69,12 @@ export default function App() {
           <a href="#skills" className="hover:underline">Skills</a>
           <a href="#projects" className="hover:underline">Projects</a>
           <a href="#certs" className="hover:underline">Certifications</a>
-          <a href="#blog" className="hover:underline">Blog</a> {/* New Blog Link */}
+          <a href="#blog" className="hover:underline">Blog</a>
           <a href="#contact" className="hover:underline">Contact</a>
         </div>
       </nav>
 
-      <header className="p-8 text-center bg-gray-100">
+      <header className="p-8 text-center bg-gray-100 max-w-full">
         <div className="flex flex-col items-center md:flex-row md:justify-center md:space-x-6">
           <img
             src="/profile.jpg" // Replace with the actual path to your image
